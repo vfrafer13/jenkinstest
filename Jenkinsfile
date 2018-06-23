@@ -7,7 +7,10 @@ pipeline {
           fileExists '/home/chef-repo/vagrant/VagrantFile'
         }
 
-        sh 'vagrant up'
+        dir(path: '/home/chef-repo/vagrant') {
+          sh 'vagrant up'
+        }
+
       }
     }
   }
