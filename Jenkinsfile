@@ -3,8 +3,10 @@ pipeline {
   stages {
     stage('vagrantfile') {
       steps {
-        sh '''cd /home/chef-repo/vagrant
-vagrant up'''
+        dir(path: '/home/chef-repo/vagrant') {
+          sh 'vagrant up'
+        }
+
       }
     }
   }
